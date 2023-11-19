@@ -56,6 +56,7 @@ body {
 
 }
 
+
 .navbar a {
     font-size: 25px;
     color: #fff;
@@ -106,7 +107,7 @@ body {
 }
 
 
-.start-btn
+#start-btn
 {
 display: flex;
 width: 142px;
@@ -131,7 +132,7 @@ transition: .5s;
 background-position: right center;
 }
 
-.start-btn:hover {
+#start-btn:hover {
     background-image: linear-gradient(to right, #221B1B -10.2%, rgba(107, 7, 7, 0.98) 70.36%, rgba(52, 47, 47, 0.78) 141.42%);
     box-shadow: none;
 }
