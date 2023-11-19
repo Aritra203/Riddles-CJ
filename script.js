@@ -4,6 +4,7 @@ const exitBtn = document.querySelector('.exit-btn');
 const main = document.querySelector('.main');
 const continueBtn = document.querySelector('.continue-btn');
 const riddleSection = document.querySelector('.riddle-section');
+const riddleBox = document.querySelector('.riddle-box');
 
 startBtn.onclick = () => {
     popupInfo.classList.add('active');
@@ -19,6 +20,32 @@ continueBtn.onclick = () => {
     riddleSection.classList.add('active');
     popupInfo.classList.remove('active');
     main.classList.remove('active');
+    riddleBox.classList.add('active');
+
+    showQuestions(0);
+}
+
+
+let questionCount = 0;
+
+const nextBtn = document.querySelector('.next-btn');
+
+nextBtn.onclick = () => {
+    questionCount++;
+    showQuestions(questionCount);
+}
+
+// const answer = document.querySelector('.answer');
+
+//getting questions and options from array
+function showQuestions(index) {
+    const questionText = document.querySelector('.question-text');
+    questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
+
+    // let optionTag = `<form><input type="text" placeholder="${questions[index].options[0]}" ></form>`;
+
+    
+    // answer.innerHTML = optionTag;
 }
 
 // fullscreen mode
