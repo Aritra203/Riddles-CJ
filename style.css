@@ -9,6 +9,7 @@
 body {
     color: #fff;
     background: #09001d;
+    overflow: hidden;
 }
 
 .main {
@@ -31,6 +32,7 @@ body {
 .container {
     display: flex;
     height: 100vh;
+    width: 200%;
 }
 
 .header {
@@ -72,6 +74,8 @@ body {
 }
 
 .home {
+    position: relative;
+    left: -50%;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -219,4 +223,21 @@ background-position: right center;
     border-color: rgb(139, 69, 69);
 }
 
+.riddle-section {
+    position: relative;
+    /* left: -50%; */
+    left: 0;
+    width: 100%;
+    background: seagreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: .8s ease-in-out;
+    transition-delay: .25s;
+}
+
+.riddle-section.active {
+    left: 0;
+}
 

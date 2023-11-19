@@ -2,6 +2,8 @@ const startBtn = document.querySelector('#start-btn');
 const popupInfo = document.querySelector('.popup-info');
 const exitBtn = document.querySelector('.exit-btn');
 const main = document.querySelector('.main');
+const continueBtn = document.querySelector('.continue-btn');
+const riddleSection = document.querySelector('.riddle-section');
 
 startBtn.onclick = () => {
     popupInfo.classList.add('active');
@@ -13,6 +15,11 @@ exitBtn.onclick = () => {
     main.classList.remove('active');
 }
 
+continueBtn.onclick = () => {
+    riddleSection.classList.add('active');
+    popupInfo.classList.remove('active');
+    main.classList.remove('active');
+}
 
 // fullscreen mode
 
