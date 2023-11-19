@@ -9,6 +9,7 @@
 body {
     color: #fff;
     background: #09001d;
+    overflow: hidden;
 }
 
 .main {
@@ -31,6 +32,7 @@ body {
 .container {
     display: flex;
     height: 100vh;
+    width: 200%;
 }
 
 .header {
@@ -75,6 +77,8 @@ body {
 }
 
 .home {
+    position: relative;
+    left: -50%;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -222,4 +226,109 @@ background-position: right center;
     border-color: rgb(139, 69, 69);
 }
 
+.riddle-section {
+    position: relative;
+    /* left: -50%; */
+    left: 0;
+    width: 100%;
+    background: #09001d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: .8s ease-in-out;
+    transition-delay: .25s;
+}
 
+.riddle-section.active {
+    left: 0;
+}
+
+.riddle-section .riddle-box {
+    position: relative;
+    width: 500px;
+    background: transparent;
+    border: 2px solid rgba(194, 34, 34, 1);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+}
+
+/* .riddle-box h1 {
+    font-size: 32px;
+    text-align: center;
+} */
+
+.riddle-box .riddle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid rgba(194, 34, 34, 1);
+    margin-bottom: 30px;
+}
+
+.riddle-header span {
+    font-size: 22px;
+    font-weight: 500;
+    font-family: 'Road Rage', sans-serif;
+}
+
+.riddle-header .header-score {
+    background: rgba(194, 34, 34, 1);
+    border-radius: 3px;
+    padding: 7px;
+}
+
+.riddle-box .question-text {
+    font-size: 24px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.answer {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, .2);
+    /* border-radius: 3px;
+    font-size: 17px;
+    margin: 15px 0;
+    cursor: pointer;*/
+}
+
+.riddle-box .riddle-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid rgba(177, 62, 62);
+    padding-top: 20px;
+    margin-top: 25px;
+}
+
+.riddle-footer .riddle-total {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.riddle-footer .next-btn {
+    width: 100px;
+    height: 45px;
+    background: rgb(255, 255, 255, .1);
+    border: 2px solid rgb(255, 255, 255, .1);
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: rgb(255, 255, 255, .3);
+    font-weight: 600;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.riddle-footer .next-btn:hover {
+    background: rgb(177, 62, 62);
+    border-color: rgb(177, 62, 62);
+}
