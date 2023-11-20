@@ -61,52 +61,32 @@ let questions = [
             "Brain",
             "Option B"
         ]
+    },
+    {
+        numb: 8,
+        question: "You measure my life in hours and I serve you by expiring. I’m quick when I’m thin and slow when I’m fat. The wind is my enemy.",
+        answer: " A candle",
+        options: [
+            " A candle",
+            "Option B"
+        ]
+    },
+    {
+        numb: 9,
+        question: "I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?",
+        answer: "A map",
+        options: [
+            "A map",
+            "Option B"
+        ]
+    },
+    {
+        numb: 10,
+        question: "What disappears as soon as you say its name?",
+        answer: "Silence",
+        options: [
+            "Silence",
+            "Option B"
+        ]
     }
 ];
-
-
-// const answers = [
-
-//     {
-//         question:"If you are justice, please do not lie. What is the price for your blind eye?",
-//         answer: "Bribe"
-//     },
-//     {
-//          question:" I grew up from a seed, as tough as a weed. But in a mansion, in a slum, I'll never know where I come from. Do you know what I am?",
-//          answer:" Orphan",
-//     }
-// ];
-
-
-// function checkAnswers()
-// {
-//     let score =0;
-
-//     for(let x=0;x<answers.length;x++)
-//     {
-//         let response = document.getElementById(`${answers[x].country.toLowerCase()}`);
-
-
-//         if(response.value == "")
-//         {
-//             return null;
-//         }
-
-//         if(response.value == answers[x].capital)
-//         {
-//             score +=1;
-//         }
-//     }
-//     document.getElementById("score").innerHTML = "Score: "+ score + "/" + answers.length;
-// }
-// let text = "";
-// for(let i=0;i<answers.length;i++)
-// {
-//     text +=`<h1>Riddle[i] ${answers[i].question}</h1>
-//     <input id = "${answers[i].question.toLowerCase()}" type="text">
-
-   
-//     `
-// }
-
-// document.getElementById("quiz").innerHTML= text +`<button onclick ="checkAnswers()">Submit</button>`;

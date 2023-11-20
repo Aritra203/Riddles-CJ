@@ -6,6 +6,7 @@ const continueBtn = document.querySelector('.continue-btn');
 const riddleSection = document.querySelector('.riddle-section');
 const riddleBox = document.querySelector('.riddle-box');
 const resultBox = document.querySelector('.result-box');
+const tryAgainBtn = document.querySelector('.tryAgain-btn');
 
 startBtn.onclick = () => {
     popupInfo.classList.add('active');
@@ -44,8 +45,8 @@ nextBtn.onclick = () => {
     questionCounter(questionNumb);
 
     nextBtn.classList.remove('active');
-    }
-    else {
+}
+else {
         showResultBox();
     }
 }
@@ -109,13 +110,54 @@ function headerScore() {
 }
 
 function showResultBox() {
-    quizBox.classList.remove('active');
+    riddleBox.classList.remove('active');
     resultBox.classList.add('active');
+
+    const scoreText = document.querySelector('.score-text');
+    scoreText.textContent = `Your Score ${userScore} out of ${questions.length}`;
+
+    const circularProgress = document.querySelector('.circular-progress');
+    const progressValue = document.querySelector('.progress-value');
+    let progressStartValue = -1;
+    let progressEndValue = (userScore / questions.length) * 100;
+    let speed = 20;
+
+    let progress = setInterval(() => {
+        progressStartValue++;
+        
+        progressValue.textContent = `${progressStartValue}%`;
+        circularProgress.style.background = `conic-gradient(rgba(194, 37, 37, 1) ${progressStartValue * 3.6}deg, rgba(255, 255, 255, .1) 0deg)`;
+
+
+        if (progressStartValue == progressEndValue) {
+            clearInterval(progress);
+        }
+    }, speed);
 }
 
 
 
+// flashlight effect
 
+let mouseX = 0;
+let mouseY = 0;
+let flashlight = document.getElementById("flashlight");
+const isTouchDevice = () => {
+  try {
+    document.createEvent("TouchEvent");
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+function getMousePosition(e) {
+  mouseX = !isTouchDevice() ? e.pageX : e.touches[0].pageX;
+  mouseY = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
+  flashlight.style.setProperty("--Xpos", mouseX + "px");
+  flashlight.style.setProperty("--Ypos", mouseY + "px");
+}
+document.addEventListener("mousemove", getMousePosition);
+document.addEventListener("touchmove", getMousePosition);
 
 
 

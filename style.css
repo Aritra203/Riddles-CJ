@@ -40,11 +40,9 @@ body {
     left: 0;
     width: 100%;
     padding: 6px 5%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background:transparent;
     display: flex;
-    justify-content: space-between;
+    justify-content:right;
     align-items: center;
     gap: 16px;
     z-index: 100;
@@ -54,8 +52,9 @@ body {
 .logo img {
 
     position: relative;
-    float: left;
+    float: right;
     width: 200px;
+    /* left: 0px; */
     filter: drop-shadow(0 0 5px #09001d);
 
 }
@@ -66,9 +65,63 @@ body {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
+    /* margin-left: 35px;
+     */
+     padding-right: 15px;
+     padding-left: 15px;
     transition: .3s;
 }
+
+
+#SignInButton {
+    display: flex;
+    width: 142px;
+    height: 52px;
+    border-radius: 9px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Road Rage', sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    color: #f2d2d2;
+    border: 1px solid #000;
+    background: linear-gradient(90deg, #221B1B -10.2%, rgba(107, 7, 7, 0.98) 70.36%, rgba(52, 47, 47, 0.78) 141.42%);
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: .5s;
+    background-position: right center;
+}
+
+#SignOutButton
+{
+    display: flex;
+    width: 142px;
+    height: 52px;
+    border-radius: 9px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Road Rage', sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    color: #f2d2d2;
+    border: 1px solid #000;
+    background: linear-gradient(90deg, #221B1B -10.2%, rgba(107, 7, 7, 0.98) 70.36%, rgba(52, 47, 47, 0.78) 141.42%);
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: .5s;
+    background-position: right center;
+}
+
 
 .navbar a:hover,
 .navbar a.active {
@@ -224,12 +277,34 @@ body {
     border-color: rgb(139, 69, 69);
 }
 
+#flashlight {
+    --Xpos: 50vw;
+    --Ypos: 50vh;
+  }
+  #flashlight:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    background: radial-gradient(
+      circle 9em at var(--Xpos) var(--Ypos),
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1)
+    );
+  }
+  /* @media screen and (max-width: 500px) {
+    body {
+      font-size: 14px;
+    }
+  } */
+
 .riddle-section {
     position: relative;
     left: -50%;
-    /* left: 0; */
     width: 100%;
-    background: #09001d;
+    background: url(bg.png);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -474,3 +549,132 @@ body {
     background: rgba(194, 37, 37, 1);
     color: #fff;
 }
+
+/* responsive */
+
+/* CSS for mobile screens */
+/* @media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .header {
+        padding: 6px 5%;
+    }
+
+    .navbar a {
+        font-size: 22px;
+    }
+
+    .home {
+        height: 100vh;
+    }
+
+    .home-content {
+        max-width: 90%;
+    }
+
+    .home-content h1 {
+        font-size: 60px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+    }
+
+    #start-btn {
+        width: 122px;
+        height: 47px;
+        font-size: 24px;
+    }
+
+    .popup-info {
+        width: 400px;
+    }
+
+    .popup-info h2 {
+        font-size: 45px;
+    }
+
+    .popup-info .info {
+        font-size: 14px;
+    }
+
+    .popup-info .btn-group .info-btn {
+        width: 110px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .riddle-section {
+        width: 100%;
+    }
+
+    .riddle-section .riddle-box {
+        width: 90%;
+    }
+
+    .riddle-box .riddle-header {
+        padding: 15px 0;
+    }
+
+    .riddle-box .question-text {
+        font-size: 20px;
+    }
+
+    .option-list .option {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .riddle-box .riddle-footer {
+        border-top: 2px solid rgba(177, 62, 62);
+        padding-top: 15px;
+        margin-top: 20px;
+    }
+
+    .riddle-footer .riddle-total {
+        font-size: 14px;
+    }
+
+    .riddle-footer .next-btn {
+        width: 80px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .riddle-section .result-box {
+        width: 90%;
+    }
+
+    .result-box h2 {
+        font-size: 45px;
+    }
+
+    .percentage-container .circular-progress {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circular-progress .progress-value {
+        font-size: 35px;
+    }
+
+    .percentage-container .score-text {
+        font-size: 20px;
+    }
+
+    .result-box .buttons {
+        margin-top: 10px;
+    }
+
+    .buttons button {
+        width: 100px;
+        height: 40px;
+        font-size: 14px;
+    }
+} */

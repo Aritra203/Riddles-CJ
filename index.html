@@ -12,21 +12,24 @@
                 <a href="#" class="logo"><img src="https://res.cloudinary.com/dqyjrqcde/image/upload/v1700333747/club-logo_xywr0a.png" alt=""></a>
 
                 <nav class="navbar">
-                    <a href="#" class="active">Home</a>
-                    <a href="#">App</a>
-                    <a href="#">Our Team</a>
+                    <a href="#">Home</a>
                     <a href="#">Contact</a>
                 </nav>
+                    <button id="SignInButton" type="button">Register</button>
+                    <button id="SignOutButton" type="button">Sign Out</button>
             </header>
 
+            
+
             <div class="container">
+                <div id="flashlight"></div>
                 <section class="riddle-section">
                     <div class="riddle-box">
                         <div class="riddle-header">
                             <span>Coding Junction Riddle Contest</span>
-                            <span class="header-score">Score: 0 / 7</span>
+                            <span class="header-score">Score: 0 / 10</span>
                         </div>
-
+                        
                         <h2 class="question-text"> Riddle 1: If you are justice, please <br> do not lie. What is the price for <br> your blind eye?</h2>
                         <div class="option-list">
                             <!-- <div class="option">
@@ -37,7 +40,7 @@
                             </div> -->
                         </div>
                         <div class="riddle-footer">
-                            <span class="riddle-total">1 of 7 Riddles</span>
+                            <span class="riddle-total">1 of 10 Riddles</span>
                             <button class="next-btn">Next</button>
                         </div>
                     </div>
@@ -48,7 +51,7 @@
                                 <span class="progress-value">0%</span>
                             </div>
 
-                            <span class="score-text">Your Score 0 out of 7</span>
+                            <span class="score-text">Your Score 0 out of 10</span>
                         </div>
 
                         <div class="buttons">
@@ -85,5 +88,68 @@
 
         <script src="questions.js"></script>
         <script src="script.js"></script>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+          
+          import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+            apiKey: "AIzaSyD4f0DlaRb59QH5y6rsyA4jwZPmWLHMoRE",
+            authDomain: "riddle-cj.firebaseapp.com",
+            projectId: "riddle-cj",
+            storageBucket: "riddle-cj.appspot.com",
+            messagingSenderId: "242862282738",
+            appId: "1:242862282738:web:427db310011e60faeb7d6b"
+           };
+          
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth();
+            const provider = new GoogleAuthProvider()
+          
+            const SignInButton = document.getElementById("SignInButton");
+            const SignOutButton = document.getElementById("SignOutButton");
+          
+           SignOutButton.style.display = "none";
+           SignInButton.style.display = "block";
+          
+           const userSignIn = async() => {
+            signInWithPopup(auth, provider)
+            .then((result) => {
+            const user = result.user
+            console.log(user);
+        }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message
+    })
+  }
+          
+          const userSignOut = async() => {
+              signOut(auth).then(() => {
+                  alert("You have signed out successfully!");
+              }).catch((error) => {})
+            }
+          
+            onAuthStateChanged(auth, (user) => {
+              if(user) {
+                SignOutButton.style.display = "block";
+                SignInButton.style.display = "none";
+          }
+          else {
+                SignOutButton.style.display = "none";
+                SignInButton.style.display = "block";
+              }
+            })
+          
+            SignInButton.addEventListener('click', userSignIn);
+            SignOutButton.addEventListener('click', userSignOut);
+
+          
+          </script>
 </body>
 </html>
