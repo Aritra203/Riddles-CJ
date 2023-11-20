@@ -2,57 +2,64 @@ let questions = [
     {
         numb: 1,
         question: "If you are justice, please do not lie. What is the price for your blind eye?",
-        answer: "Bribe.",
+        answer: "Bribe",
         options: [
-            Bribe
+            "Bribe",
+            "Option B"
         ]
     },
     {
         numb: 2,
         question: " I grew up from a seed, as tough as a weed. But in a mansion, in a slum, I'll never know    where I come from. Do you know what I am?",
-        answer: "Orphan.",
+        answer: "Orphan",
         options: [
-            Orphan
+            "Orphan",
+            "Option B"
         ]
     },
     {
         numb: 3,
         question: "The less of them you have, the more one is worth?",
-        answer: "Friend.",
+        answer: "Friend",
         options: [
-            Friend
+            "Friend",
+            "Option B"
         ]
     },
     {
         numb: 4,
         question: "What is always on time but never arrives?",
-        answer: "Tomorrow.",
+        answer: "Tomorrow",
         options: [
-            Tomorrow
+            "Tomorrow",
+            "Option B"
         ]
     },
     {
         numb: 5,
         question: "I feel your every move. I'm with you from birth, and I'll see you when you rot.",
-        answer: "Shadow.",
+        answer: "Shadow",
         options: [
-            Shadow
+            "Shadow",
+            "Option B"
         ]
     },
     {
         numb: 6,
         question: "We're five little items of an everyday sort, you'll find us all in a tennis court.",
-        answer: "Vowels.",
+        answer: "Vowels",
         options: [
-            Vowels
+            "Vowels",
+            "Option B"
         ]
     },
     {
         numb: 7,
         question: "I have billions of eyes, yet live in darkness. I have millions of ears, yet only four lobes. I have no muscle, yet rule two hemispheres. What am I?",
-        answer: "Brain.",
+        answer: "Brain",
         options: [
-            Brain
+            "Brain",
+            "Option B"
         ]
     }
 ];
