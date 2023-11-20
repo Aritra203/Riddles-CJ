@@ -254,6 +254,8 @@ body {
     opacity: 0;
     pointer-events: none;
     transform: scale(.9);
+    transition: .3s ease;
+    transition-delay: 0s;
 }
 
 .riddle-section .riddle-box.active {
@@ -298,15 +300,37 @@ body {
     font-family: 'Risque', serif;
 }
 
-.answer {
+.option-list .option {
     width: 100%;
     padding: 12px;
     background: transparent;
-    border: 2px solid rgba(0, 0, 0, .2);
-    /* border-radius: 3px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 4px;
     font-size: 17px;
     margin: 15px 0;
-    cursor: pointer;*/
+    cursor: pointer;
+    transition: .3s;
+}
+
+.option-list .option:hover {
+    background: rgb(255, 255, 255, .1);
+    border-color: rgb(255, 255, 255, .1);
+}
+
+.option-list .option.correct {
+    background: #09001d;
+    color: #00a63d;
+    border-color: #00a63d;
+}
+
+.option-list .option.incorrect {
+    background: #09001d;
+    color: #a60045;
+    border-color: #a60045;
+}
+
+.option-list .option.disabled {
+    pointer-events: none;
 }
 
 .riddle-box .riddle-footer {
@@ -333,11 +357,120 @@ body {
     color: rgb(255, 255, 255, .3);
     font-weight: 600;
     cursor: pointer;
-    /* pointer-events: none; */
+    pointer-events: none;
     transition: .5s;
 }
 
-.riddle-footer .next-btn:hover {
+.riddle-footer .next-btn.active {
+    pointer-events: auto;
     background: rgb(177, 62, 62);
     border-color: rgb(177, 62, 62);
+    color: #fff;
+}
+
+.riddle-footer .next-btn.active:hover {
+    background: rgb(177, 62, 62);
+    border-color: rgb(177, 62, 62);
+}
+
+.riddle-section .result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 500px;
+    background: transparent;
+    border: 2px solid rgba(194, 34, 34, 1);
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.riddle-section .result-box.active {
+    opacity: 1;
+    pointer-events: auto;   
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.result-box h2 {
+    font-size: 52px;
+}
+
+.result-box .percentage-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 40px;
+}
+
+.percentage-container .circular-progress {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: conic-gradient(rgba(194, 37, 37, 1) 3.6deg, rgba(255, 255, 255, .1) 0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.percentage-container .circular-progress::before{
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background: #09001d;
+    border-radius: 50%;
+}
+
+.circular-progress .progress-value {
+    position: relative;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.percentage-container .score-text {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.result-box .buttons {
+    display: flex;
+}
+
+.buttons button {
+    width: 130px;
+    height: 47px;
+    background: rgba(194, 34, 34, 1);
+    border: 2px solid rgba(194, 34, 34, 1);
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    margin: 0 20px 20px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.buttons button:nth-child(1):hover {
+    background: rgb(87, 19, 19);
+    border-color:rgb(87, 19, 19)
+}
+
+.buttons button:nth-child(2) {
+    background: transparent;
+    color: rgba(194, 37, 37, 1);
+}
+
+.buttons button:nth-child(2):hover {
+    background: rgba(194, 37, 37, 1);
+    color: #fff;
 }
